@@ -60,13 +60,12 @@ public class TelaProduto {
 		System.out.println("Digite o Autor: ");
 		p.setAutor(sc.next());
 
-		
 		try {
 			new ProdutoDao().cadastrar(p);
 		} catch (DaoException e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			System.out.println("Erro "+ e.getMessage());
+			// e.printStackTrace();
+			System.out.println("Erro " + e.getMessage());
 		}
 
 	}
@@ -90,6 +89,7 @@ public class TelaProduto {
 			produto.setCantor(sc.next());
 			System.out.println("Digite o Autor: ");
 			produto.setAutor(sc.next());
+			new ProdutoDao().alterar(produto);
 		}
 	}
 

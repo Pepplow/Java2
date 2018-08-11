@@ -61,6 +61,7 @@ public class TelaCategoria {
 		int id = sc.nextInt();
 		Categoria categoria = new CategoriaDao().buscarporId(id);
 
+
 		if (categoria == null) {
 			System.out.println("Categoria nao encontrada!");
 		} else {
@@ -69,6 +70,7 @@ public class TelaCategoria {
 			categoria.setGenero(sc.next());
 			System.out.println("Digite o SubGenero: ");
 			categoria.setSubgenero(sc.next());
+			new CategoriaDao().alterar(categoria);
 
 		}
 	}
@@ -78,22 +80,25 @@ public class TelaCategoria {
 		int id = sc.nextInt();
 		Categoria categoria = new CategoriaDao().buscarporId(id);
 
+		
 		if (categoria == null) {
 
 			System.out.println("Categoria nao encontrada!");
-
+			
 		} else {
 			new CategoriaDao().excluir(categoria);
 			System.out.println("Categoria Deletada com Sucesso!");
 		}
 	}
 
+	
+
 	public void listarCategoria() {
 		ArrayList<Categoria> categorias = new CategoriaDao().listar();
-
+		
 		System.out.println("=======Categorias Cadastradas=======");
 		for (Categoria c : categorias) {
-
+			
 			System.out.println("ID: " + c.getId());
 			System.out.println("Genero: " + c.getGenero());
 			System.out.println("SubGenero: " + c.getSubgenero());

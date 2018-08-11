@@ -8,7 +8,10 @@ public class UsuarioDao implements Dao<Usuario> {
 	static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 	static int id = 1;
 
-	public void cadastrar(Usuario u) {
+	public void cadastrar(Usuario u) throws DaoException {
+		if (u.getCpf() == null|| u.getCpf().equals("")) {
+			throw new DaoException("o CPF não pode ser nulo");
+		}
 		u.setId(id++);
 		usuarios.add(u);
 	}

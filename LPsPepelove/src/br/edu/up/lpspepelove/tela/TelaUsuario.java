@@ -4,6 +4,7 @@ import java.io.Console;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import br.edu.up.lpspepelove.Dao.DaoException;
 import br.edu.up.lpspepelove.Dao.UsuarioDao;
 import br.edu.up.lpspepelove.entidade.Usuario;
 
@@ -54,7 +55,13 @@ public class TelaUsuario {
 		System.out.println("Digite o Sexo: ");
 		u.setSexo(sc.next());
 
-		new UsuarioDao().cadastrar(u);
+		try {
+			new UsuarioDao().cadastrar(u);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			// e.printStackTrace();
+			System.out.println("Erro " + e.getMessage());
+		}
 
 	}
 
@@ -94,7 +101,7 @@ public class TelaUsuario {
 
 	public void listarUsuario() {
 		ArrayList<Usuario> usuarios = new UsuarioDao().listar();
-		
+
 		System.out.println("=====Usuarios Cadastrados=====");
 		for (Usuario u : usuarios) {
 			System.out.println("ID: " + u.getId());
