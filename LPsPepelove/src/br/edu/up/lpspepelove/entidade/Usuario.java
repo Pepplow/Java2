@@ -1,16 +1,16 @@
 package br.edu.up.lpspepelove.entidade;
 
 public class Usuario {
-	private Long id;
+	private Integer id;
 	private String nome;
 	private Long cpf;
     private Integer idade;
     private String sexo;
 	
-    public Long getId() {
+    public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNome() {

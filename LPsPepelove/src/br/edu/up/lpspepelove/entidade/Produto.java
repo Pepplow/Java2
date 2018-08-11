@@ -2,17 +2,17 @@ package br.edu.up.lpspepelove.entidade;
 
 public class Produto {
 	//Atributos
-	private Long id;
+	private Integer id;
 	private String Descricao;
 	private int ano;
 	private String album;
 	private String autor;
 	private String cantor;
 	//Getters e Setters
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getDescricao() {

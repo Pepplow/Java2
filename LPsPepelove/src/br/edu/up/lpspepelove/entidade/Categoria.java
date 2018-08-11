@@ -1,14 +1,14 @@
 package br.edu.up.lpspepelove.entidade;
 
 public class Categoria {
-	private Long id;
+	private Integer id;
 	private String genero;
 	private String subgenero;
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getGenero() {
