@@ -60,12 +60,12 @@ public class CategoriaDao implements Dao<Categoria> {
 			String querry = "select id,genero,subgenero from categoria";
 			ResultSet c = conn.prepareStatement(querry).executeQuery();
 			while (c.next()) {
-				Categoria ca = new Categoria();
-				ca.setId(c.getInt(1));
-				ca.setGenero(c.getString(2));
-				ca.setSubgenero(c.getString(3));
+				Categoria categoria = new Categoria();
+				categoria.setId(c.getInt(1));
+				categoria.setGenero(c.getString(2));
+				categoria.setSubgenero(c.getString(3));
 				
-				categorias.add(ca);
+				categorias.add(categoria);
 			}
 		} catch (Exception ex){
 			ex.printStackTrace();
